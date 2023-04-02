@@ -1,0 +1,265 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>final</title>
+</head>
+
+<style>
+
+  *{
+    padding: 0;
+    border: 0;
+    margin: 0;
+  
+  }
+  
+
+ 
+
+  .main-container{
+    width: 930px;
+    border: 16px solid rgb(82, 74, 74);
+    margin: 10px 10px;
+    padding: 50px 50px;
+    border-radius: 3px;
+    
+  }
+
+.main-d{
+  display: flex;
+  margin-bottom: 90px;
+
+}
+
+.d1 img{
+  height: 150px;
+}
+
+.d2{
+  margin-top: 15px;
+  margin-left: 45px;
+}
+.d2 h1{
+            color: rgb(177 -2 22 / 1);
+            margin-bottom: 10px;
+        }
+        .d2 h2{
+            color: rgb(0 152 74);
+            text-align: center;
+            margin-bottom: 9px;
+        }
+        .d2 p{
+          margin-bottom: 5px;
+          font-size: large;
+            color: #524a4a;
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+        }
+
+  
+
+
+
+
+
+
+table{
+  margin-left: 200px;
+  text-align: left;
+  word-spacing: 2px;
+
+    font-size: 20px;
+   
+}
+
+
+th{
+  padding-right: 150px;
+  padding-bottom: 30px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+}
+
+td{
+  padding-bottom: 30px;
+  font-style: italic;
+}
+
+.highlight{
+  color: #d932c1;
+}
+.note {
+            font-size: large;
+            margin: 30px 90px;
+            padding-bottom: 40px;
+            border-bottom: 4px solid black;
+        }
+
+.dept{
+  display: flex;
+  font-style: italic;
+  justify-content: space-around;
+  font-size: large;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  margin-top: 60px;
+  
+}
+
+.dept p{
+  margin-bottom: 7px;
+}
+.dept img{
+            width: 90px;
+            height: 90px;
+            margin-left: 40px;
+        }
+
+.last{
+    text-align: right;
+}
+
+a{
+    margin-right: 10px;
+}
+
+.finalbutton{
+            width: 170px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        .finalbutton:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+</style>
+
+
+<body>
+  <% leaves.forEach(item => { %>
+    <script>
+        function display() {
+           window.print();
+        }
+
+        function test(){
+            var address= "<%= item.mail%>";
+            var  sub="Hurray ! your leave request has been ACCEPTED 😊";
+            var s1="Hello "+ "<%= item.firstName %>"+" "+"<%= item.lastName %>"+" your leave request has been Accepted since your approval is satisfied with the St.Joseph's College of Engineering leave request criteria. The leave form attached is in the mail, now you can print out the form and submit to the correspond incharge.";
+            var s4,s5,s3;
+            s4="                                                                                                                                                                                                                  "
+            s3="From    St.Joseph's College of Engineering,";
+            s5="blacksQuad  team  (⁠◠⁠‿⁠◕⁠)"
+            emailLink.href = "mailto:" + address + "?subject="+sub+"&body="+s1+s4+s3+s4+s5;
+        }
+  
+        
+     </script>
+  
+  <div class="main-container">
+        
+
+   <div class="main-d">
+      <div class="d1">
+      <img src="download.jpg" alt="hey" />
+      </div>
+
+      <div class="d2">
+      <p>You Choose, We Do it</p>
+      <h1>ST JOSEPH'S COLLEGE OF ENGINNEERING</h1>
+      <h2>(An Autonomous Institution)</h2>
+      <p>We make you shine</p>
+      </div>
+   </div>
+ 
+
+  <table>
+    <tr>
+      <th>Name of the Student</th>
+      <td><%= item.firstName%> <%= item.lastName%></td>
+    </tr>
+    <tr>
+      <th>Roll Number</th>
+      <td><%= item.rollNo%></td>
+    </tr>
+    <tr>
+      <th>UG / PG</th>
+      <td><%= item.ug_pg%></td>
+    </tr>
+    <tr>
+        <th>Course</th>
+        <td><%= item.course%></td>
+      </tr>
+    <tr>
+      <th>Year</th>
+      <td><%= item.year%></td>
+    </tr>
+    <tr>
+      <th>Branch</th>
+      <td><%= item.branch %></td>
+    </tr>
+    <tr>
+      <th>Section</th>
+      <td><%= item.section%></td>
+    </tr>
+    <tr>
+      <th>Total leave taken so for</th>
+      <td><%= item.totalDays%></td>
+    </tr>
+    <tr>
+      <th>Leave applied | Reason</th>
+      <td><%= item.reason%></td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td><%= item.fromDate%> to <%= item.toDate%></td>
+    </tr>
+  </table>
+
+  <div class="note">
+    <em><b>Note:</b><br><br>
+        1. <b>For one day leave,</b> the leave letter should be submitted on the previous day with students
+        signature or on the same day with parents signature.<br><br>
+        2. <b>For two days leave,</b> the leave letter should be submitted on the previous day or on the
+        day with parents signature.<br><br>
+        3. <b>For three days and above,</b> Parents should come in person and meet the HOD with all
+        supporting medical documents in case of medical leave – and not medical certificate.
+         Scattered absentees will not be considered as medical leave.
+      
+    </em>
+</div>
+
+
+  <div class="dept"> 
+    <div class="dept1">
+        <p>Dept. Attendance In charge </p>
+        <p>Name: Mr.Vandimalayan</p>
+        <p>Signature:</p>
+        <img src="sign1.png" alt="">
+    </div>
+    <div>
+        <p>HOD – Students Affairs</p>
+        <p>Name: Mrs.Lilly Ramesh</p>
+        <p>Signature:</p>
+        <img src="sign2.jpg" alt="">
+    </div>
+</div>
+
+
+</div>
+
+<div class="last">
+    <button onclick="display()" class="finalbutton">Generate as PDF</button>
+<a id="emailLink" href="">Send mail</a>
+
+<button onclick="test()" class="finalbutton">Generate mail</button>
+</div>
+</body>
+
+<% }) %>
+</html>

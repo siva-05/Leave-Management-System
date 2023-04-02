@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Form</title>
+
+
+    <style>
+        .main-container {
+
+            width: 752;
+            /* border: 1px solid blue; */
+            border-radius: 0.5cm;
+            padding: 50px;
+            margin: 100px 340px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: sans-serif;
+
+        }
+
+
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 750;
+        }
+
+        form {
+            padding-left: 45px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-left: 2px;
+            margin-bottom: 10px;
+        }
+
+
+        .f {
+
+            background-color: #f3f3f3;
+            height: 40;
+            width: 312;
+
+            border: 0px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            margin-right: 20px;
+
+        }
+
+        .html {
+            font-size: small;
+            color: black;
+            font-style: italic;
+
+
+        }
+
+        .f1 {
+
+            background-color: #f3f3f3;
+            height: 40;
+            width: 156;
+
+            border: 0px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+
+        }
+
+        .f-textarea {
+            background-color: #f3f3f3;
+            height: 250px;
+            width: 650px;
+
+            border: 0px;
+            margin-bottom: 15px;
+            padding-top: 18px;
+            padding-left: 20px;
+        }
+
+        .s {
+            width: 450px;
+            height: 50px;
+            font-size: medium;
+            color: white;
+            background-color: #79b730;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        span {
+            margin-right: 300px;
+        }
+
+        #date {
+            margin-top: 10px;
+        }
+
+        .s:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        em {
+            word-spacing: 8px;
+        }
+
+        .note {
+            margin: 50px 0px;
+        }
+        
+
+        input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsl(93, 56%, 70%);
+}
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="main-container">
+        <h1>Leave Form</h1>
+        <form action="/leaveform" method="post">
+            <p>E-mail</p>
+            <input class="f" type="email" placeholder="eg:abc@gmail.com" name="gmail">
+            <p>Student Name</p>
+            <input class="f" type="text" placeholder="First Name" name="fName">
+            <input class="f" type="text" placeholder="Last Name" name="lName"><br>
+            <p>Roll Number</p>
+            <input class="f" type="text" placeholder="eg:20IT301" name="rollNo">
+            <p>UG/PG</p>
+            <input class="f" type="text" placeholder="UG-PG" name="ug">
+            <p>Course</p>
+            <input class="f" type="text" placeholder="Course" name="course">
+            <p>Year/Branch</p>
+            <input class="f" type="text" placeholder="Year" name="year">
+            <input class="f" type="text" placeholder="Branch" name="branch"><br>
+            <p>Section</p>
+            <input class="f" type="text" placeholder="Section" name="section">
+            <p>Total number of leave / absent taken so far</p>
+            <input class="f" type="text" placeholder="Total Days" name="totalDays">
+            <br>
+            <input class="f" type="text" placeholder="a) Leave-with leave letter" name="lwlDays">
+            <input class="f" type="text" placeholder="b) Medical Leave" name="mlDays">
+            <input class="f" type="text" placeholder="c) Absent" name="aDays">
+            <input class="f" type="text" placeholder="d) Privileage Leave" name="plDays">
+            <p>Leave applied | <b>Reason </b></p>
+            <select class="f" name="reason">
+                <option value="">Please select</option>
+                <option value="ml">Medical leave</option>
+                <option value="pri">Privileage leave</option>
+                <option value="parental">Parental leave</option>
+                <option value="personal">Personal leave</option>
+
+            </select>
+            <input class="f" type="text" placeholder="myfile" name="file">
+            <p>No of Days leave needed</p>
+            <input class="f" type="text" placeholder="days needed" name="need">
+            <p>Date</p>
+            <!-- <input class="f"  type="date" placeholder="dates" name="date"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or</b> -->
+            <span>From</span><span>to</span><br>
+            <input class="f" id="date" type="date" placeholder="dates" name="fromDate"><input class="f" type="date"
+                placeholder="datess " name="toDate">
+
+
+            <div class="note">
+                <em>Note:<br><br>
+                    1. <b>For one day leave,</b> the leave letter should be submitted on the previous day with students
+                    signature or on the same day with parents signature.<br><br>
+                    2. <b>For two days leave,</b> the leave letter should be submitted on the previous day or on the
+                    day with parents signature.<br><br>
+                    3. <b>For three days and above,</b> Parents should come in person and meet the HOD with all
+                    supporting medical documents in case of medical leave – and not medical certificate.
+                     Scattered absentees will not be considered as medical leave.<br><br>
+                    4. NRI & CGC Students for VISA renewal and for own brother / sister marriage – can meet the
+                    HOD with all supporting documents before two weeks of their schedule.
+                </em>
+            </div>
+
+            <center><input class="s" type="submit"></center>
+        </form>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejection</title>
+
+
+    <style>
+
+        .main-container{
+            
+            width: 752;
+            /* border: 1px solid blue; */
+            border-radius: 0.5cm;
+            padding: 50px;
+            margin: 100px 340px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: sans-serif;
+
+        }
+
+
+
+        h1{
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 750;
+        }
+
+        p{
+            font-size: large;
+            margin-bottom: 30px ;
+            text-decoration: underline;
+        }
+
+
+        
+        .f {
+
+background-color: #f3f3f3;
+height: 40;
+width: 312;
+
+border: 0px;
+margin-bottom: 15px;
+margin-left: 40px;
+padding-left: 20px;
+margin-right: 20px;
+
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsl(93, 56%, 70%);
+}
+
+        #selection{
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+        .sub{
+            width: 170px;
+            height: 37px;
+            font-size:medium;
+            color: white;
+            background-color: #c4c361;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+        .sub:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        a{
+            font-size: large;
+            font-family: cursive;
+            /* font-style: italic; */
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+
+    <div class="main-container">
+        <h1>Rejection</h1>
+       
+            
+            <p><b>Select Option </b></p>
+
+            <input type="radio" id="selection"  name="Option" value="a">
+            <label >Reason is not valid</label><br>
+            <input type="radio" id="selection" name="Option" value="b">
+            <label >Not have enough days</label><br>
+            <input type="radio" id="selection" name="Option" value="c">
+            <label >Proof is invalid</label><br>  
+            <input type="radio" id="selection" name="Option" value="d">
+            <label >Exam days</label><br>  
+            <input type="radio" id="selection" name="Option" value="e">
+            <label >Performance not good</label><br>  
+            <input type="radio" id="selection" name="Option" value="f">
+            <label >Have backlogs</label><br>  
+            <input type="radio" id="selection" name="Option" value="g">
+            <label >Other</label> 
+            <input class="f" type="text" id="t1" ><br>
+            
+              <button class="sub" onclick="test()">Generate</button>
+              <a id="EmailLink" href="">click here</a>
+
+
+
+    </div>
+
+<% leaves.forEach(item => { %>
+    <script>
+     
+
+        function test() {
+            var address = "<%= item.mail %>";
+            var  sub="Sorry, your leave request has been REJECTED 🥲";
+            var s1="Hello "+ "<%= item.firstName %>"+" "+"<%= item.lastName %>"+" your leave request has been cancelled since you did not satisfied with the St.Joseph's College of Engineering leave request criteria. It may due to the following reason ";
+           var s2,s3,s4,s5;
+
+
+            var ele = document.getElementsByName('Option');
+            var ch;
+        for(i = 0; i < ele.length; i++) {
+            if(ele[i].checked)
+            ch=ele[i].value;
+        }
+
+            
+            switch(ch){
+                case "a":
+                    s2="the leave reason you provided is not valid.";
+                    break;
+                case "b":
+                    s2="you don't have enough days.";
+                    break;
+                case "c":
+                    s2="the uploaded proof is not valid.";
+                    break;
+                case "d":
+                    s2="the requested date contains an exam.";
+                    break;
+                case "e":
+                    s2="your curriculum performance was not upto the level."; 
+                    break;
+                case "f":
+                    s2="you have some backlogs."
+                    break;
+                case "g":
+                    s2=document.getElementById("t1").value+".";
+                    break;   
+            }
+            s4="                                                                                                                                                                                                                  "
+            s3="From    St.Joseph's College of Engineering,";
+            s5="blacksQuad  team  (⁠◠⁠‿⁠◕⁠)"
+            
+
+            EmailLink.href = "mailto:" + address + "?subject="+sub+"&body="+s1+s2+s4+s3+s4+s5;
+        }
+    </script>
+<% }); %>
+
+</body>
+</html>

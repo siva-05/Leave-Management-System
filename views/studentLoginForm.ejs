@@ -1,0 +1,150 @@
+<html>
+    <title>
+        Login
+    </title>
+<head>
+
+
+<style>
+
+header{
+    margin-top: 50px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+header img{
+    height: 150px;
+    margin-right: 100px;
+  
+}
+
+header h1{
+    color: rgb(177 -2 22 / 1);
+}
+header h2{
+    color: rgb(0 152 74);
+    text-align: center;
+}
+
+body{
+background-image:url("hi.jpeg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.main-container{
+margin-top:40px;
+margin-bottom:120px;
+margin-right:20%;
+margin-left:20%;
+padding:70px 40px;
+padding-left: 60px;
+background-color:black;
+border-radius: 20px;
+opacity:0.8;
+}
+
+table,tr,td{
+    letter-spacing: 2px;
+color:white;
+padding:15px 10px;
+
+font-size:large;
+}
+
+form{
+margin:0px 18%;
+}
+
+.box{
+background-color: transparent;
+border:none;
+border-bottom:solid 1px white;
+width:300px;
+color:white;
+padding:5px;
+border-radius:5px;
+}
+
+.main-container h1{
+color:white;
+text-align:center;
+}
+
+.sub{
+    letter-spacing: 0.5px;
+margin-top:15px;
+background-color: grey;
+height:45px;
+width:120px;
+border-radius: 10px;
+color:white;
+font-size:small;
+cursor: pointer;
+}
+
+.sub:hover{
+    background-color: green;
+    
+}
+
+h3{
+    font-size: small;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: rgb(188, 230, 35);
+    text-align: right;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsl(94, 20%, 38%);
+}
+
+</style>
+
+
+</head>
+<body>
+    <header>
+        <div>
+        <img src="download.jpg" alt="">
+        </div>
+
+        <div>
+        <h1>ST JOSEPH'S COLLEGE OF ENGINNEERING</h1>
+        <h2>(An Autonomous Institution)</h2>
+        </div>
+    </header>
+
+
+<div class="main-container">
+<h1 style="letter-spacing: 1px;">Student Login</h1>
+
+
+<form align="center" action="student_sign_up" method="post">
+<table>
+<tr>
+<td>User Name:</td>
+<td><input type="text" class="box" name="sname" required></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" class="box" name="pass" required></td>
+</tr>
+</table>
+<input class="sub" type="submit" value="submit" >
+</form>
+<% var siva; if(siva){ %>
+
+    <h3>login failed</h3>
+
+<% }%>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>testing1</title>
+</head>
+
+<style>
+
+  *{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    word-spacing: 2px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+  }
+
+  h1{
+    margin-top: 60px;
+    margin-left: 60px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid black;
+    width: 126px;
+   
+    
+    font-size: 30px;
+ 
+    letter-spacing: 2px;
+    
+  }
+
+  .main-container{
+    width: 625px;
+    /* border: 1px solid rgb(82, 74, 74); */
+    margin: 50px 170px;
+    padding: 50px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    
+  }
+
+table{
+  text-align: left;
+  
+}
+
+
+th{
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+
+td{
+  padding-bottom: 10px;
+}
+
+.highlight{
+  color: #d932c1;
+}
+
+.sub{
+            width: 200px;
+            height: 40px;
+            font-size:medium;
+            color: white;
+            background-color: #c4c361;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-right: 2px;
+            cursor: pointer;
+        }
+        .sub:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        a{
+            color: #0000ee;
+            text-decoration: none;
+        }
+
+</style>
+    
+
+
+<body>
+  <h1 id="hi">Leave Request</h1>
+  <% leaves.forEach(item => { %>
+  <div class="main-container">
+    <form action="hey33" method="post">
+  <table>
+    <!-- <tr>
+      <th>Mail ID</th>
+      <td><%= item.mail%></td>
+    </tr> -->
+    <tr>
+      <th>Roll Number</th>
+      <td><input type="text" name="rolex"  value="<%= item.rollNo %>"/></td>
+    </tr>
+    <tr>
+      <th>First Name</th>
+      <td><%= item.firstName %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= item.lastName%></td>
+    </tr>
+    <!-- <tr>
+      <th>UG / PG</th>
+      <td><%= item.ug_pg%></td>
+    </tr>
+    <tr>
+      <th>Coures</th>
+      <td><%= item.course%></td>
+    </tr> -->
+    <tr>
+      <th>Year</th>
+      <td><%= item.year%></td>
+    </tr>
+    <tr>
+      <th>Section</th>
+      <td><%= item.section%></td>
+    </tr>
+    <tr>
+      <th>Total Days</th>
+      <td><%= item.totalDays%></td>
+    </tr>
+    <!-- <tr>
+      <th>a) Leave letter</th>
+      <td>82928201820</td>
+    </tr>
+    <tr>
+      <th>b) Medical Leave</th>
+      <td>SIVAKAAR2002@GMAIL.COM</td>
+    </tr>
+    <tr>
+      <th>c) Absent</th>
+      <td class="highlight">6</td>
+    </tr>
+    <tr>
+      <th>d) Privileage Leave</th>
+      <td>8.9</td>
+    </tr> -->
+    <tr>
+      <th>Leave applied|<b>Reason </b></</th>
+      <td><%= item.reason%></td>
+    </tr>
+    <tr>
+      <th>Proof link</th>
+      <td><a href="<%= item.proof %>">click here</a></td>
+    </tr>
+    <tr>
+        <th>Leave needed (days)</th>
+        <td><input type="text" name="dilli" id="theInput" value="<%= item.needDays %>"/></td>
+    </tr>
+    <tr>
+        <th>From Date</th>
+        <td><%= item.fromDate%></td>
+    </tr>
+    <tr>
+        <th>To Date</th>
+        <td><%= item.toDate%></td>
+    </tr>
+  </table>
+  <input type="submit" name="k1" value="Verify" class="sub"/>
+  <input type="submit" name="k2" value="Reject" class="sub"/>
+  <input type="submit" name="k3" value="Accept" class="sub"/>
+</form>
+</div>
+
+<script>
+      
+   var b="<%= item.branch %>"
+        document.getElementById("hi").textContent=b+" Dept";
+    </script>
+<% }) %>
+</body>
+
+
+</html>

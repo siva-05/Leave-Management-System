@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Form</title>
+
+
+    <style>
+
+        .main-container{
+            
+            width: 752;
+            /* border: 1px solid blue; */
+            border-radius: 0.5cm;
+            padding: 50px;
+            margin: 100px 340px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: sans-serif;
+
+        }
+
+
+
+        h1{
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 750;
+        }
+
+        form{
+            padding-left: 45px ;
+        }
+
+        p{
+            font-size: 16px;
+            margin-left: 2px;
+            margin-bottom: 10px;
+        }
+
+
+        .f{
+
+            background-color: #f3f3f3;
+            height: 40;
+            width: 312;
+            
+            border: 0px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            margin-right: 20px;
+            
+        }
+
+        .html{
+            font-size: small;
+            color: black;
+            font-style: italic;
+
+            
+        }
+
+        .f1{
+
+background-color: #f3f3f3;
+height: 40;
+width: 156;
+
+border: 0px;
+margin-bottom: 15px;
+padding-left: 20px;
+
+}
+
+        .f-textarea{
+            background-color: #f3f3f3;
+            height: 250px;
+            width: 650px;
+            
+            border: 0px;
+            margin-bottom: 15px;
+            padding-top: 18px;
+            padding-left: 20px;
+        }
+
+        .s{
+            width: 450px;
+            height: 50px;
+            font-size:medium;
+            color: white;
+            background-color: #79b730;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        span{
+            margin-right: 300px;
+        }
+        #date{
+            margin-top:10px;
+        }
+
+        .s:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        em{
+            word-spacing: 8px;
+        }
+
+        .note{
+            margin: 50px 0px;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+
+    <div class="main-container">
+        <h1>Leave Request</h1>
+        <form action="/leaverequest" method="post">
+            
+            <p><b>Select Department </b></p>
+            <select class="f" name="department">
+                <option value="">Please select</option>
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="EEE">EEE</option>
+                <option value="EIE">EIE</option>
+                <option value="BIOTECH">BIOTECH</option>
+               
+              </select>
+            
+     
+            <center><input class="s" type="submit"></center>
+        </form>
+
+
+    </div>
+
+
+
+</body>
+</html>
